@@ -7,7 +7,6 @@ import equilibrate_charge
 import copy_files
 import system_setup
 import windows
-import submit_all
 
 
 def main():
@@ -84,8 +83,6 @@ def main():
      Submits all lambda step subdirectories in all environment simulation directories pairwise to a cluster. The path 
      to the cluster environment and cluster run control files have to be provided via the -c/--cluster flag.
     """
-
-    # submit_all.submit_sys(env_paths)
 
 
 if __name__ == "__main__":
