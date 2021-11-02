@@ -5,7 +5,6 @@ import shutil
 import fileinput
 from contextlib import closing
 from pathlib import Path
-# import apolar_solvent
 
 """
  ONLY CALLED IF MODULE IS EXECUTED STANDALONE
@@ -305,7 +304,6 @@ if __name__ == '__main__':
                                                                                 'files for the simulation environments.')
     parser.add_argument('-mol', '--molecules', type=Path, required=True, help='Need: location of molecule directories '
                                                                               '(parent directory).')
-    # parser.add_argument('-pwd', '--directory', type=Path, required=True, help='Need: path to working directory')
 
     args = parser.parse_args()
 

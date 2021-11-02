@@ -91,10 +91,6 @@ def create(environments, forcefield_file, charges=None):
             topologies = [forcefield / 'martini_v2.2RP_5T.itp',
                           forcefield / 'martini_v2.0_lipids_all_201506.itp', forcefield / 'ions.itp']
 
-        """
-         Number of digits of the number of graphs for formatting directory/file names. Replace with check if math.log10 
-         returns an integer?
-        """
         length = len(subdirs)
 
         if length == 100 or length == 1000:
