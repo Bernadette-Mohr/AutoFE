@@ -2,7 +2,7 @@
 
 # email on start, end, and abortion
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=b.j.mohr@uva.nl
+#SBATCH --mail-user= "================> your email <================"
 # echo "Job $SLURM_JOBID started at `date`" | mail $USER -s "Job $SLURM_JOBID"
 
 #SBATCH -t 90:00:00
@@ -17,9 +17,10 @@
 
 
 module purge
-module load 2019
-module load GROMACS/2018.6-intel-2019b-PLUMED-2.5.1
+module load "================> appropriate module <================"
+module load "================> GROMACS version 2018.6 <================"
 
+# in case anaconda is used to set python version and modules. Location of conda environment may be different.
 source $HOME/.bashrc
 conda activate py37
 
@@ -39,7 +40,7 @@ STEPS=$((N_STEPS - 1))
 mkdir -p "$TMPDIR"/molecule_NR           #create a temporary directory for my job
 mkdir -p "$TMPDIR"/molecule_NR/scripts
 
-cp $HOME/AutoFE/analysis.py $HOME/AutoFE/position_probabilities.py $HOME/AutoFE/process_FEs.py "$TMPDIR"/molecule_NR/scripts/
+cp $HOME/AutoFE/analysis/analysis.py $HOME/AutoFE/analysis/position_probabilities.py $HOME/AutoFE/analysis/process_FEs.py "$TMPDIR"/molecule_NR/scripts/
 
 for env in CDL2 POPG OCTANE WATER; do
     mkdir -p "$TMPDIR"/molecule_NR/$env

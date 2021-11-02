@@ -40,7 +40,7 @@ STEPS=$((N_STEPS - 1))
 mkdir -p "$TMPDIR"/molecule_NR           #create a temporary directory for my job
 mkdir -p "$TMPDIR"/molecule_NR/scripts
 
-cp $HOME/AutoFE/analysis.py $HOME/AutoFE/position_probabilities.py $HOME/AutoFE/process_FEs.py "$TMPDIR"/molecule_NR/scripts/
+cp $HOME/AutoFE/analysis/analysis.py $HOME/AutoFE/analysis/position_probabilities.py $HOME/AutoFE/analysis/process_FEs.py "$TMPDIR"/molecule_NR/scripts/
 
 for env in CDL2 POPG OCTANE WATER; do
     mkdir -p "$TMPDIR"/molecule_NR/$env
@@ -176,9 +176,6 @@ else
         
     cp "$TMPDIR"/molecule_NR/*.pickle $HOME/WORK_DIR/
     cp "$TMPDIR"/molecule_NR/CDL2/*.txt $HOME/WORK_DIR/CDL2/molecule_NR/
-    # cp "$TMPDIR"/molecule_NR/POPG/*.log $HOME/WORK_DIR/POPG/molecule_NR/
-    # cp "$TMPDIR"/molecule_NR/WATER/*.log $HOME/WORK_DIR/WATER/molecule_NR/
-    # cp "$TMPDIR"/molecule_NR/OCTANE/*.log $HOME/WORK_DIR/OCTANE/molecule_NR/
     
     cd $HOME/WORK_DIR/
     echo "end of screening job"
