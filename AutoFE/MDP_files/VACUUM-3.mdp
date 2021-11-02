@@ -1,0 +1,27 @@
+; MD WITH INCREASING TIME STEP
+
+define                   = -DFLEXIBLE
+integrator               = md
+nsteps                   = 1000
+emtol                    = 1
+dt                       = DELTA_T
+pbc                      = xyz
+
+cutoff_scheme		 = group
+rcoulomb                 = 0.9
+rlist                    = 0.9
+rvdw                     = 0.9
+
+tcoupl                   = v-rescale
+ref_t                    = 200
+tau_t                    = 0.1
+tc_grps                  = System
+
+gen_vel                  = yes
+gen_temp                 = 300
+
+constraints              = none
+lincs_order		 = 4
+lincs_warnangle		 = 30
+
+nstxtcout                = 1000

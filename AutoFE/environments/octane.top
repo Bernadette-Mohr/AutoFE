@@ -1,0 +1,11 @@
+; Include MARTINI atom types + solvents
+#include "martini_v2.2RP_5T.itp"
+#include "martini_v2.0_solvents.itp"
+
+[ system ]
+; name
+Octane box
+
+[ molecules ]
+; name  number
+OCT  336

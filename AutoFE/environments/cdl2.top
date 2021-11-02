@@ -1,0 +1,13 @@
+#include "martini_v2.2RP_5T.itp"
+#include "martini_v2.0_lipids_all_201506.itp"
+#include "ions.itp"
+
+[ system ]
+; name
+Polarizable Martini system
+
+[ molecules ]
+; name        number
+CDL2 98
+PW 3287
+PNA 196

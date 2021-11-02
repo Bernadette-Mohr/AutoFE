@@ -1,0 +1,11 @@
+#include "martini_v2.2RP_5T.itp"
+#include "ions.itp"
+
+[ system ]
+Martini polarizable water
+
+[ molecules ]
+; name        number
+PW	974
+PNA	28
+PCL	28

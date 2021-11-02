@@ -1,0 +1,58 @@
+; MD WITH CUSTOM MDP FILES
+
+define                   = -DFLEXIBLE
+integrator               = steep
+nsteps                   = 1000
+emtol                    = 1
+emstep                   = 0.001
+nstcomm                  = 10
+
+nstxout                  = 1
+nstvout                  = 0
+nstfout                  = 0
+nstlog                   = 1000
+nstenergy                = 100
+nstxout-compressed       = 1000
+compressed-x-precision   = 100
+compressed-x-grps        =
+energygrps               = MOL
+
+;VACUUM SETTINGS
+cutoff-scheme            = group
+nstlist                  = 0
+ns_type                  = grid
+pbc                      = no
+rlist                    = 0
+
+coulombtype              = Cut-off
+rcoulomb_switch          = 0.0
+rcoulomb                 = 0.0
+epsilon_r                = 15
+vdw_type                 = cut-off
+vdw-modifier             = Potential-shift-verlet
+rvdw_switch              = 0.9
+rvdw                     = 0.0
+
+tcoupl                   = v-rescale
+tc-grps                  = MOL
+tau_t                    = 1.0
+ref_t                    = 300
+Pcoupl                   = no; parrinello-rahman
+Pcoupltype               = semiisotropic
+tau_p                    = 12.0
+compressibility          = 3e-4 3e-4
+ref_p                    = 1.0 1.0
+
+gen_vel                  = no
+gen_temp                 = 300
+gen_seed                 = 473526
+
+; MARTINI and CONSTRAINTS
+; for ring systems and stiff bonds constraints are defined
+; which are best handled using Lincs.
+
+constraints              = none
+constraint_algorithm     = Lincs
+continuation             = no
+lincs_order              = 4
+lincs_warnangle          = 30

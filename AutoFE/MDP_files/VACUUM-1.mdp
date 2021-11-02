@@ -1,0 +1,23 @@
+; EM WITHOUT NONBONDED INTERACTIONS
+
+define              	 = -DFLEXIBLE
+integrator          	 = steep
+nsteps              	 = 1000
+emstep              	 = 0.001
+emtol                    = 1
+pbc                 	 = xyz
+cutoff-scheme       	 = group 
+
+; Table extension is needed initially 
+table-extension     	 = 2
+
+; During first steps nonbonded interactions
+; are included within molecule
+energygrps          	 = MOL
+energygrp_excl      	 = MOL MOL
+
+; Usually no trajectory is written, 
+; but this can be changed (-trj)
+nstxout             	 = 1
+lincs_order 		 = 4
+lincs_warnangle		 = 30
